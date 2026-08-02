@@ -1,62 +1,64 @@
 {
-  "_readme": "Edit this file to set your alerts. Each entry needs a 'symbol' and exactly one of 'above' or 'below'. Run the workflow manually once and read the log to see current prices before you pick levels.",
+  "_readme": "Edit this file to set your alerts, then commit and push. Each entry needs a 'symbol' and exactly one of 'above' or 'below' — even parked entries, so give them a placeholder level. Set 'enabled': true to arm one. Parked entries still get their price printed in the run log, so you can read current prices there before choosing a level.",
 
   "alerts": [
     {
       "name": "Gold (XAU/USD)",
       "symbol": "GC=F",
-      "above": 3600,
-      "note": "COMEX gold futures. Use XAUUSD=X instead if you want spot."
+      "below": 3950,
+      "note": "COMEX gold futures. Set 02 Aug 2026 when gold was $4,107.",
+      "enabled": true
     },
     {
       "name": "Gold (XAU/USD)",
       "symbol": "GC=F",
-      "below": 3200
+      "above": 4500,
+      "note": "PARKED — placeholder level. Set a real number and flip enabled to true.",
+      "enabled": false
     },
 
     {
       "name": "Bitcoin",
       "symbol": "BTC-USD",
-      "above": 130000
+      "below": 55000,
+      "note": "PARKED — placeholder level. Set a real number and flip enabled to true.",
+      "enabled": false
     },
     {
       "name": "Bitcoin",
       "symbol": "BTC-USD",
-      "below": 90000
+      "above": 75000,
+      "note": "PARKED — placeholder level. Set a real number and flip enabled to true.",
+      "enabled": false
     },
 
     {
       "name": "Nifty 50",
       "symbol": "^NSEI",
-      "above": 27000
+      "below": 23000,
+      "note": "PARKED — placeholder level. Set a real number and flip enabled to true.",
+      "enabled": false
     },
     {
       "name": "Nifty 50",
       "symbol": "^NSEI",
-      "below": 24000
+      "above": 26000,
+      "note": "PARKED — placeholder level. Set a real number and flip enabled to true.",
+      "enabled": false
     },
 
     {
       "name": "Sensex",
       "symbol": "^BSESN",
-      "above": 88000
-    },
-
-    {
-      "name": "Reliance Industries",
-      "symbol": "RELIANCE.NS",
-      "above": 1600
+      "below": 74000,
+      "note": "PARKED — placeholder level. Set a real number and flip enabled to true.",
+      "enabled": false
     },
     {
-      "name": "TCS",
-      "symbol": "TCS.NS",
-      "below": 3000,
-      "cooldown_minutes": 120
-    },
-    {
-      "name": "HDFC Bank",
-      "symbol": "HDFCBANK.NS",
-      "above": 2000,
+      "name": "Sensex",
+      "symbol": "^BSESN",
+      "above": 84000,
+      "note": "PARKED — placeholder level. Set a real number and flip enabled to true.",
       "enabled": false
     }
   ]
