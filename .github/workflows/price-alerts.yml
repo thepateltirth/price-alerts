@@ -1,0 +1,44 @@
+name: price-alerts
+
+on:
+  schedule:
+    # Every 10 minutes. GitHub's minimum is 5 (*/5) and the schedule is
+    # best-effort — runs can be delayed a few minutes when GitHub is busy.
+    - cron: "*/10 * * * *"
+  workflow_dispatch: {}      # lets you run it manually from the Actions tab
+
+permissions:
+  contents: write            # needed to commit state.json back
+
+concurrency:
+  group: price-alerts
+  cancel-in-progress: false  # never kill a run mid-alert
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check prices and alert
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python3 check_prices.py
+
+      - name: Save state
+        if: always()
+        run: |
+          if [ -n "$(git status --porcelain state.json)" ]; then
+            git config user.name  "price-alerts"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add state.json
+            git commit -m "state: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            # Another run may have pushed while we were working.
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || true
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          else
+            echo "no state change"
+          fi

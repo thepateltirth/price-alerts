@@ -1,0 +1,63 @@
+{
+  "_readme": "Edit this file to set your alerts. Each entry needs a 'symbol' and exactly one of 'above' or 'below'. Run the workflow manually once and read the log to see current prices before you pick levels.",
+
+  "alerts": [
+    {
+      "name": "Gold (XAU/USD)",
+      "symbol": "GC=F",
+      "above": 3600,
+      "note": "COMEX gold futures. Use XAUUSD=X instead if you want spot."
+    },
+    {
+      "name": "Gold (XAU/USD)",
+      "symbol": "GC=F",
+      "below": 3200
+    },
+
+    {
+      "name": "Bitcoin",
+      "symbol": "BTC-USD",
+      "above": 130000
+    },
+    {
+      "name": "Bitcoin",
+      "symbol": "BTC-USD",
+      "below": 90000
+    },
+
+    {
+      "name": "Nifty 50",
+      "symbol": "^NSEI",
+      "above": 27000
+    },
+    {
+      "name": "Nifty 50",
+      "symbol": "^NSEI",
+      "below": 24000
+    },
+
+    {
+      "name": "Sensex",
+      "symbol": "^BSESN",
+      "above": 88000
+    },
+
+    {
+      "name": "Reliance Industries",
+      "symbol": "RELIANCE.NS",
+      "above": 1600
+    },
+    {
+      "name": "TCS",
+      "symbol": "TCS.NS",
+      "below": 3000,
+      "cooldown_minutes": 120
+    },
+    {
+      "name": "HDFC Bank",
+      "symbol": "HDFCBANK.NS",
+      "above": 2000,
+      "enabled": false
+    }
+  ]
+}
