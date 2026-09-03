@@ -3,8 +3,8 @@
     "GC=F|below|3950|0": {
       "armed": true,
       "fired_count": 0,
-      "last_price": 4429.9,
-      "last_seen": "2026-09-03T00:08:54+00:00"
+      "last_price": 4478.1,
+      "last_seen": "2026-09-03T04:19:46+00:00"
     }
   },
   "heartbeat": "2026-08-22T16:22:34+00:00"
