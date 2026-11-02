@@ -1,11 +1,11 @@
 {
   "alerts": {
     "GC=F|below|3950|0": {
-      "armed": false,
+      "armed": true,
       "fired_count": 1,
       "last_fired": "2026-10-30T15:29:50+00:00",
-      "last_price": 3912.8,
-      "last_seen": "2026-11-02T09:22:03+00:00"
+      "last_price": 3960.1,
+      "last_seen": "2026-11-02T19:39:26+00:00"
     }
   },
   "heartbeat": "2026-10-21T21:31:38+00:00"
